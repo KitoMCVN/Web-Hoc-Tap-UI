@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-custom {
+  background-image: url(https://tailwindcss.com/_next/static/media/1-dark@tinypng.a99d6c93.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: blur(300px);
+}
