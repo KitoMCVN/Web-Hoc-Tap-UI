@@ -1,11 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: #00000011;
+}
 
-.bg-custom {
-  background-image: url(https://tailwindcss.com/_next/static/media/1-dark@tinypng.a99d6c93.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  backdrop-filter: blur(300px);
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #1c2636;
 }
