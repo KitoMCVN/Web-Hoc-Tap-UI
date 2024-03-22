@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { HomeData, Course } from "./data";
 import { Link } from "react-router-dom";
 
@@ -14,18 +14,17 @@ interface SelectedClass {
 }
 
 const Home: React.FC<Props> = ({ courses }) => {
-  const [selectedClass, setSelectedClass] = useState<SelectedClass | null>(null);
+  const [selectedClass, setSelectedClass]: [SelectedClass | null, Dispatch<SetStateAction<SelectedClass | null>>] = useState<SelectedClass | null>(null);
 
   const handleClassClick = (description: string) => {
-    if (description !== "") {
-      setSelectedClass((prevSelectedClass: any) => {
-        if (prevSelectedClass && prevSelectedClass.description === description) {
-          return null; // Unselect if already selected
-        } else {
-          return courses.find((course) => course.classes.some((classItem) => classItem.description === description))?.classes.find((classItem) => classItem.description === description) || null;
-        }
-      });
-    }
+    setSelectedClass((prevSelectedClass: SelectedClass | null) => {
+      if (prevSelectedClass && prevSelectedClass.description === description) {
+        return null;
+      } else {
+        const foundClass = courses.map((course) => course.classes.find((classItem) => classItem.description === description)).find(Boolean); // Find the first truthy value
+        return foundClass || null;
+      }
+    });
   };
 
   return (
