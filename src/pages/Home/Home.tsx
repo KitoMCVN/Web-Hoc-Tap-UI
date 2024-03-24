@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import { HomeData, Course } from "./data";
 import { Link } from "react-router-dom";
 
@@ -14,17 +14,23 @@ interface SelectedClass {
 }
 
 const Home: React.FC<Props> = ({ courses }) => {
-  const [selectedClass, setSelectedClass]: [SelectedClass | null, Dispatch<SetStateAction<SelectedClass | null>>] = useState<SelectedClass | null>(null);
+  const [selectedClass, setSelectedClass] = useState<SelectedClass | null>(null);
 
   const handleClassClick = (description: string) => {
-    setSelectedClass((prevSelectedClass: SelectedClass | null) => {
-      if (prevSelectedClass && prevSelectedClass.description === description) {
-        return null;
-      } else {
-        const foundClass = courses.map((course) => course.classes.find((classItem) => classItem.description === description)).find(Boolean); // Find the first truthy value
-        return foundClass || null;
-      }
-    });
+    if (description !== "") {
+      const foundClass = courses.find((course) => course.classes.some((classItem) => classItem.description === description));
+      const newSelectedClass = (foundClass?.classes?.find((classItem) => classItem.description === description) as unknown as SelectedClass) || null;
+      setSelectedClass((selectedClass) => {
+        if (selectedClass && newSelectedClass && selectedClass === newSelectedClass) return null;
+        return newSelectedClass;
+      });
+    }
+  };
+
+  const classItemClickHandler = (description: string) => {
+    return () => {
+      handleClassClick(description);
+    };
   };
 
   return (
@@ -37,31 +43,31 @@ const Home: React.FC<Props> = ({ courses }) => {
             {course.classes.map((classItem) => (
               <div
                 key={classItem.id}
-                className={`min-h-[200px] flex items-center p-4 rounded-lg bg-slate-200 dark:bg-slate-800 cursor-pointer ${selectedClass && selectedClass.description === classItem.description ? "" : ""}`}
-                onClick={() => handleClassClick(classItem.description)}
+                className={`min-h-[200px] flex items-center p-4 rounded-lg bg-slate-200 dark:bg-slate-800 cursor-pointer ${selectedClass && selectedClass.description === classItem.description ? "selected" : ""}`}
+                onClick={classItemClickHandler(classItem.description)}
               >
                 <h3 className="text-4xl font-bold mx-auto min-w-[120px]">{classItem.name}</h3>
               </div>
             ))}
           </div>
-          {course.classes.map((classItem) => (
-            <>
-              {selectedClass && selectedClass.description === classItem.description && (
-                <>
+          {course.classes.map(
+            (classItem) =>
+              selectedClass &&
+              selectedClass.description === classItem.description && (
+                <div key={classItem.id}>
                   <h4 className="text-xl font-bold mt-5 mb-1">Liên Kết:</h4>
                   <ul className="flex gap-4 h-full">
                     {classItem.subjects.map((subject) => (
-                      <Link to={`/video?list=${subject.playlist_id}`} key={subject.playlist_id}>
-                        <li className="h-[50px] w-[200px] bg-slate-300 rounded-lg flex items-center content-center dark:bg-slate-800">
-                          <p className="mx-auto">{subject.name}</p>
-                        </li>
-                      </Link>
+                      <li key={subject.playlist_id} className="h-[50px] w-[200px] bg-slate-300 rounded-lg flex items-center content-center dark:bg-slate-800">
+                        <Link to={`/video?list=${subject.playlist_id}`} className="w-full text-center ">
+                          <p>{subject.name}</p>
+                        </Link>
+                      </li>
                     ))}
                   </ul>
-                </>
-              )}
-            </>
-          ))}
+                </div>
+              )
+          )}
         </div>
       ))}
     </div>
