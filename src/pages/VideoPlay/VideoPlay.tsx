@@ -16,8 +16,10 @@ const VideoPlay: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [nextPageToken, setNextPageToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchVideos = async (token: string | null = null) => {
+    setIsLoading(true); // Set loading to true when fetching new videos
     if (listId) {
       let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${listId}&key=AIzaSyDK0C0ZHiM-zoK_X_ClsDKVkduWimXEXmI`;
 
@@ -36,12 +38,13 @@ const VideoPlay: React.FC = () => {
 
         setVideos((prevVideos) => [...prevVideos, ...videosData]);
         setNextPageToken(response.data.nextPageToken);
-
+        setIsLoading(false);
         if (!searchParams.has("w") && videosData.length > 0) {
           setSelectedVideo(videosData[0].id);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
+        setIsLoading(false);
       }
     }
   };
@@ -60,8 +63,14 @@ const VideoPlay: React.FC = () => {
     }
   }, [searchParams, videos]);
 
-  const handleLoadMore = () => {
-    fetchVideos(nextPageToken);
+  const handleLoadAll = async () => {
+    setIsLoading(true);
+    let token = nextPageToken;
+    while (token) {
+      await fetchVideos(token);
+      token = nextPageToken;
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -88,8 +97,12 @@ const VideoPlay: React.FC = () => {
           ))}
         </div>
         {nextPageToken && (
-          <button onClick={handleLoadMore} className="bg-slate hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-            Tải thêm
+          <button
+            onClick={handleLoadAll}
+            className="mx-auto bg-slate-900 hover:bg-slate-700 focus:outline-none text-slate-50 font-semibold h-10 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto dark:bg-sky-500 dark:highlight-white/20 dark:hover:bg-sky-400"
+            disabled={isLoading}
+          >
+            {isLoading ? "Loading..." : "Tải tất cả"}
           </button>
         )}
       </div>
