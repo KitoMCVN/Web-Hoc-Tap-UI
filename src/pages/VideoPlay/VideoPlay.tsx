@@ -99,7 +99,7 @@ const VideoPlay: React.FC = () => {
         {nextPageToken && (
           <button
             onClick={handleLoadAll}
-            className="mbg-slate-900 hover:bg-slate-700 focus:outline-none text-slate-50 font-semibold h-10 px-6 rounded-lg w-full flex items-center justify-center dark:bg-sky-500 dark:highlight-white/20 dark:hover:bg-sky-400"
+            className="bg-slate-900 hover:bg-slate-700 focus:outline-none text-slate-50 font-semibold h-10 px-6 rounded-lg w-full flex items-center justify-center dark:bg-sky-500 dark:highlight-white/20 dark:hover:bg-sky-400"
             disabled={isLoading}
           >
             {isLoading ? "Loading..." : "Tải tất cả"}

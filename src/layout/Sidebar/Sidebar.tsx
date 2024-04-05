@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faClipboard, faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faClipboard } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
   const sidebar = [
     { name: "Trang Chủ", link: "/", icon: <FontAwesomeIcon icon={faHouse} /> },
     { name: "Luyện Tập", link: "/practice", icon: <FontAwesomeIcon icon={faClipboard} /> },
-    { name: "Tiện Ít", link: "/practice", icon: <FontAwesomeIcon icon={faBriefcase} /> },
   ];
 
   return (
