@@ -274,13 +274,13 @@ export const HomeData: Course[] = [
   },
   {
     id: 4,
-    name: "Chương Trình Cũ (2006)",
-    description: "Bộ sách Chương Trình Cũ (2006) áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
+    name: "Chương Trình Cũ",
+    description: "Bộ sách Chương Trình Cũ áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
     classes: [
       {
         id: 1,
         name: "Lớp 9",
-        description: "Chương Trình Cũ (2006) Lớp 9",
+        description: "Chương Trình Cũ Lớp 9",
         subjects: [
           {
             name: "Toán Đại Số",
@@ -298,12 +298,16 @@ export const HomeData: Course[] = [
             name: "Hoá",
             playlist_id: "PLCd8j6ZYo0lZCN2kNj8hER6G7qYKk9Jmz",
           },
+          {
+            name: "Văn",
+            playlist_id: "",
+          },
         ],
       },
       {
         id: 2,
         name: "Lớp 12",
-        description: "Chương Trình Cũ (2006) Lớp 12",
+        description: "Chương Trình Cũ Lớp 12",
         subjects: [
           {
             name: "Toán Đại Số",
