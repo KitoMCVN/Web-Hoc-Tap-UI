@@ -103,11 +103,11 @@ const Mouse: React.FC = () => {
     >
       {isGameRunning ? (
         <>
-          <div className="absolute top-[90px] right-0 text-right pr-10 text-slate-8 00">
-            <p className="text-md">Score: {score}</p>
-            <p className="text-md">Time Left: {timeLeft}</p>
-          </div>
-          <div className="size-full cursor-crosshair border border-slate-900/10 rounded-lg">
+          <div className="size-full cursor-crosshair border dark:dark:border-slate-50/10 border-slate-900/10 rounded-lg">
+            <div className="relative top-0 right-0 text-right pt-3 pr-5 text-slate-8 text-slate-600 dark:text-slate-300">
+              <p className="text-md">Score: {score}</p>
+              <p className="text-md">Time Left: {timeLeft}</p>
+            </div>
             {objects.map(
               (obj) =>
                 obj.visible && (
@@ -146,7 +146,9 @@ const Mouse: React.FC = () => {
         </div>
       ) : (
         <div className="size-full flex justify-center items-center">
-          <p className="text-5xl font-bold mb-4">Starting in {countdown}s...</p>
+          <p className="text-5xl font-bold text-slate-900 dark:text-slate-50 mb-4">
+            Starting in {countdown}s...
+          </p>
         </div>
       )}
     </div>
