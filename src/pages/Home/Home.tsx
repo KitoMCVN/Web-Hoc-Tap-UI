@@ -82,7 +82,7 @@ const Home: React.FC<Props> = ({ courses }) => {
               selectedClass.description === classItem.description && (
                 <div key={classItem.id}>
                   <h4 className="text-xl font-bold mt-5 mb-1">Liên Kết:</h4>
-                  <ul className="flex gap-4 h-full">
+                  <ul className="flex gap-4 h-full flex-wrap">
                     {classItem.subjects.map((subject) => (
                       <li
                         key={subject.playlist_id}

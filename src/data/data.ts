@@ -22,7 +22,8 @@ export const HomeData: Course[] = [
   {
     id: 1,
     name: "Cánh Diều",
-    description: "Bộ sách Cánh Diều là một trong những bộ sách giáo khoa phổ biến ở Việt Nam, được thiết kế cho các lớp từ 6 đến 11.",
+    description:
+      "Bộ sách Cánh Diều là một trong những bộ sách giáo khoa phổ biến ở Việt Nam, được thiết kế cho các lớp từ 6 đến 11.",
     classes: [
       {
         id: 1,
@@ -44,7 +45,15 @@ export const HomeData: Course[] = [
           {
             name: "Ngữ Văn",
             playlist_id: "",
-          }
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -63,7 +72,15 @@ export const HomeData: Course[] = [
           {
             name: "Ngữ Văn",
             playlist_id: "",
-          }
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -78,6 +95,18 @@ export const HomeData: Course[] = [
           {
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lbAy9vctkaBWMQWImSddk05",
+          },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
           },
         ],
       },
@@ -94,6 +123,18 @@ export const HomeData: Course[] = [
             name: "Sinh",
             playlist_id: "PLCd8j6ZYo0lYeTHkWftmClY10EvSycPrj",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -105,6 +146,18 @@ export const HomeData: Course[] = [
             name: "Toán",
             playlist_id: "PLCd8j6ZYo0lZQORsvi6INVSqDdNNNQRST",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
     ],
@@ -113,7 +166,8 @@ export const HomeData: Course[] = [
   {
     id: 2,
     name: "Chân Trời Sáng Tạo",
-    description: "Bộ sách Chân Trời Sáng Tạo mang đến một cách tiếp cận sáng tạo và phản ánh nhu cầu của học sinh trong việc học tập.",
+    description:
+      "Bộ sách Chân Trời Sáng Tạo mang đến một cách tiếp cận sáng tạo và phản ánh nhu cầu của học sinh trong việc học tập.",
     classes: [
       {
         id: 1,
@@ -132,6 +186,18 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lbiy_wsmhPQDhKq1E5SdheY",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -146,6 +212,18 @@ export const HomeData: Course[] = [
           {
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lb0rKdkuJv4pB8Bf6CcYGq_",
+          },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
           },
         ],
       },
@@ -162,6 +240,18 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYPl46qJ7t6VNaYK-UgwjdU",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -172,6 +262,18 @@ export const HomeData: Course[] = [
           {
             name: "Toán",
             playlist_id: "PLCd8j6ZYo0lZ9ASyPwNuWJ3VqmLavAiR7",
+          },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
           },
         ],
       },
@@ -184,6 +286,18 @@ export const HomeData: Course[] = [
             name: "Toán",
             playlist_id: "PLCd8j6ZYo0laYOPASTepBqmTv1YCleMpG",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
     ],
@@ -192,7 +306,8 @@ export const HomeData: Course[] = [
   {
     id: 3,
     name: "Kết nối tri thức",
-    description: "Bộ sách Kết nối tri thức nhấn mạnh sự liên kết giữa kiến thức học thuật và cuộc sống hàng ngày của học sinh.",
+    description:
+      "Bộ sách Kết nối tri thức nhấn mạnh sự liên kết giữa kiến thức học thuật và cuộc sống hàng ngày của học sinh.",
     classes: [
       {
         id: 1,
@@ -211,6 +326,18 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lb-_Y2IV2sesEtinzqsFEeE",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -225,6 +352,18 @@ export const HomeData: Course[] = [
           {
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYZOWhUU9uq5RdrMK3kW-OA",
+          },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
           },
         ],
       },
@@ -241,6 +380,18 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYPl46qJ7t6VNaYK-UgwjdU",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -256,6 +407,18 @@ export const HomeData: Course[] = [
             name: "Sinh",
             playlist_id: "PLCd8j6ZYo0lYcyBF5XmBkucDdH8xa1WVR",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -267,6 +430,18 @@ export const HomeData: Course[] = [
             name: "Toán",
             playlist_id: "PLCd8j6ZYo0lbaqU2G1uj7ncJJPq5huN3K",
           },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
     ],
@@ -275,7 +450,8 @@ export const HomeData: Course[] = [
   {
     id: 4,
     name: "Chương Trình Cũ",
-    description: "Bộ sách Chương Trình Cũ áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
+    description:
+      "Bộ sách Chương Trình Cũ áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
     classes: [
       {
         id: 1,
@@ -302,6 +478,14 @@ export const HomeData: Course[] = [
             name: "Văn",
             playlist_id: "",
           },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
+          },
         ],
       },
       {
@@ -324,6 +508,22 @@ export const HomeData: Course[] = [
           {
             name: "Hoá",
             playlist_id: "PLCd8j6ZYo0lZK1gsKE2nz0A9CH_h7PXbE",
+          },
+          {
+            name: "Ngữ Văn",
+            playlist_id: "",
+          },
+          {
+            name: "Vật Lý",
+            playlist_id: "",
+          },
+          {
+            name: "Lịch Sử",
+            playlist_id: "",
+          },
+          {
+            name: "Địa Lý",
+            playlist_id: "",
           },
         ],
       },
