@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import DarkModeToggle from "../../hook/darkMode";
+import DarkModeToggle from "../DarkMode/darkMode";
 import SearchVideos from "./search";
 
 function Header() {
@@ -25,14 +25,6 @@ function Header() {
           <div className="flex gap-3 pl-3 border-l border-l-slate-900/10 dark:border-slate-50/10">
             <div className="text-xl">
               <DarkModeToggle />
-            </div>
-            <div>
-              <a
-                className="bg-slate-900 hover:bg-slate-700 focus:outline-none text-slate-50 font-semibold h-10 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto dark:bg-sky-500 dark:highlight-white/20 dark:hover:bg-sky-400"
-                href=""
-              >
-                Support
-              </a>
             </div>
           </div>
         </div>

@@ -3,11 +3,13 @@ import { Home } from "../pages/Home";
 import { Practice } from "../pages/Practice";
 import { Keyboard } from "../pages/Keyboard";
 import { VideoPlay } from "../pages/VideoPlay";
+import { Mouse } from "../pages/Mouse";
 
 export const publicRoutes = [
   { path: "/", component: Home, layout: DefaultLayout },
   { path: "/practice", component: Practice, layout: DefaultLayout },
   { path: "/practice/keyboard", component: Keyboard, layout: DefaultLayout },
+  { path: "/practice/mouse", component: Mouse, layout: DefaultLayout },
   { path: "/video", component: VideoPlay, layout: DefaultLayout },
 ];
 export const privateRoutes: string[] = [];

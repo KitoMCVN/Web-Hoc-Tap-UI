@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { HomeData } from "../../pages/Home/data";
+import { HomeData } from "../../data/data";
 import { Link } from "react-router-dom";
 
 interface SearchResult {
