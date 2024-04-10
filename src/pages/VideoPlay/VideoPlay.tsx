@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Key, useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 
 interface Video {
+  uniqueKey: Key | null | undefined;
   position: number;
   id: string;
   title: string;
@@ -19,7 +20,7 @@ const VideoPlay: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchVideos = async (token: string | null = null) => {
-    setIsLoading(true); // Set loading to true when fetching new videos
+    setIsLoading(true);
     if (listId) {
       let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${listId}&key=AIzaSyDK0C0ZHiM-zoK_X_ClsDKVkduWimXEXmI`;
 
@@ -29,22 +30,27 @@ const VideoPlay: React.FC = () => {
 
       try {
         const response = await axios.get(url);
-        const videosData = response.data.items.map((item: any, index: number) => ({
-          id: item.snippet.resourceId.videoId,
-          title: item.snippet.title,
-          position: index,
-          thumbnail: item.snippet.thumbnails.default.url,
-        }));
+        const videosData = response.data.items.map(
+          (item: any, index: number) => ({
+            id: item.snippet.resourceId.videoId,
+            title: item.snippet.title,
+            position: index,
+            thumbnail: item.snippet.thumbnails.default.url,
+            uniqueKey: `${
+              item.snippet.resourceId.videoId
+            }_${index}_${Math.random()}`,
+          })
+        );
 
         setVideos((prevVideos) => [...prevVideos, ...videosData]);
         setNextPageToken(response.data.nextPageToken);
-        setIsLoading(false); // Set loading to false after fetching new videos
+        setIsLoading(false);
         if (!searchParams.has("w") && videosData.length > 0) {
           setSelectedVideo(videosData[0].id);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
-        setIsLoading(false); // Set loading to false if there's an error
+        setIsLoading(false);
       }
     }
   };
@@ -54,14 +60,19 @@ const VideoPlay: React.FC = () => {
   }, [listId]);
 
   useEffect(() => {
-    const videoId: string | null = searchParams.get("w");
-
-    if (videoId) {
-      setSelectedVideo(videoId);
-    } else if (videos.length > 0) {
-      setSelectedVideo(videos[0].id);
+    if (!searchParams.has("w")) {
+      setSelectedVideo(videos.length > 0 ? videos[0].id : null);
     }
   }, [searchParams, videos]);
+
+  useEffect(() => {
+    if (selectedVideo) {
+      const videoId: string | null = searchParams.get("w");
+      if (videoId && videoId !== selectedVideo) {
+        setSelectedVideo(videoId);
+      }
+    }
+  }, [searchParams, selectedVideo]);
 
   const handleLoadAll = async () => {
     setIsLoading(true);
@@ -75,11 +86,13 @@ const VideoPlay: React.FC = () => {
 
   return (
     <div className="flex gap-5 flex-col-reverse lg:flex-row">
-      <div className="lg:w-96 w-full">
-        <h2 className="mb-5 font-bold text-xl dark:text-slate-50 text-slate-800">Danh sách video</h2>
+      <div className="lg:w-96 w-full lg:mt-0 mt-20">
+        <h2 className="mb-5 font-bold text-xl dark:text-slate-50 text-slate-800">
+          Danh sách video
+        </h2>
         <div>
-          {videos.map((video, index) => (
-            <div key={video.id + index}>
+          {videos.map((video) => (
+            <div key={video.uniqueKey}>
               <Link
                 to={{
                   pathname: "/video",
@@ -88,7 +101,11 @@ const VideoPlay: React.FC = () => {
               >
                 <div className="flex gap-4 mb-3 dark:text-slate-300 text-slate-800">
                   <div className="size-24 rounded-lg overflow-hidden min-w-24">
-                    <img className="size-full object-cover" src={video.thumbnail} alt={video.title} />
+                    <img
+                      className="size-full object-cover"
+                      src={video.thumbnail}
+                      alt={video.title}
+                    />
                   </div>
                   <p>{video.title}</p>
                 </div>
@@ -107,9 +124,16 @@ const VideoPlay: React.FC = () => {
         )}
       </div>
       <div className="w-full h-96">
-        <h2 className="mb-5 font-bold text-xl dark:text-slate-50 text-slate-800">Video đang chọn</h2>
+        <h2 className="mb-5 font-bold text-xl dark:text-slate-50 text-slate-800">
+          Video đang chọn
+        </h2>
         <div className="w-full lg:h-[80vh] h-[400px] bg-slate-300 dark:bg-slate-600">
-          <iframe className="size-full" src={`https://www.youtube.com/embed/${selectedVideo}`} frameBorder="0" allowFullScreen title="Selected Video"></iframe>
+          <iframe
+            className="size-full"
+            src={`https://www.youtube.com/embed/${selectedVideo}`}
+            allowFullScreen
+            title="Selected Video"
+          ></iframe>
         </div>
       </div>
     </div>
