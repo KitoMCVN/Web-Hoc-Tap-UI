@@ -8,7 +8,7 @@ const Practice = () => {
         <p className="text-gray-600 dark:text-slate-300 mb-4">
           Luyện tập kỉ năng văn phòng
         </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 xl:grid-cols-3">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 xl:grid-cols-5">
           <Link
             to="/practice/keyboard"
             className="min-h-[200px] flex items-center p-4 rounded-lg bg-slate-200 dark:bg-slate-800 cursor-pointer"

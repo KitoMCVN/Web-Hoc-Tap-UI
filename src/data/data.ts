@@ -79,10 +79,32 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lbAy9vctkaBWMQWImSddk05",
           },
+        ],
+      },
+      {
+        id: 4,
+        name: "Lớp 10",
+        description: "Cánh Diều Lớp 10",
+        subjects: [
           {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0laruhgRmxC8zrfd5PY6Ne4u",
+          },
+          {
+            name: "Sinh",
+            playlist_id: "PLCd8j6ZYo0lYeTHkWftmClY10EvSycPrj",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Lớp 11",
+        description: "Cánh Diều Lớp 11",
+        subjects: [
+          {
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0lZQORsvi6INVSqDdNNNQRST",
+          },
         ],
       },
     ],
@@ -110,10 +132,6 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lbiy_wsmhPQDhKq1E5SdheY",
           },
-          {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
         ],
       },
       {
@@ -129,10 +147,6 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lb0rKdkuJv4pB8Bf6CcYGq_",
           },
-          {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
         ],
       },
       {
@@ -148,10 +162,28 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYPl46qJ7t6VNaYK-UgwjdU",
           },
+        ],
+      },
+      {
+        id: 4,
+        name: "Lớp 10",
+        description: "Chân Trời Sáng Tạo Lớp 10",
+        subjects: [
           {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0lZ9ASyPwNuWJ3VqmLavAiR7",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Lớp 11",
+        description: "Chân Trời Sáng Tạo Lớp 11",
+        subjects: [
+          {
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0laYOPASTepBqmTv1YCleMpG",
+          },
         ],
       },
     ],
@@ -179,10 +211,6 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lb-_Y2IV2sesEtinzqsFEeE",
           },
-          {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
         ],
       },
       {
@@ -198,10 +226,6 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYZOWhUU9uq5RdrMK3kW-OA",
           },
-          {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
         ],
       },
       {
@@ -217,10 +241,32 @@ export const HomeData: Course[] = [
             name: "Khoa học tự nhiên",
             playlist_id: "PLCd8j6ZYo0lYPl46qJ7t6VNaYK-UgwjdU",
           },
+        ],
+      },
+      {
+        id: 4,
+        name: "Lớp 10",
+        description: "Kết nối tri thức Lớp 10",
+        subjects: [
           {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0lYG_l7ZNJQEcEyhwtna1Kgf",
+          },
+          {
+            name: "Sinh",
+            playlist_id: "PLCd8j6ZYo0lYcyBF5XmBkucDdH8xa1WVR",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Lớp 11",
+        description: "Kết nối tri thức Lớp 11",
+        subjects: [
+          {
+            name: "Toán",
+            playlist_id: "PLCd8j6ZYo0lbaqU2G1uj7ncJJPq5huN3K",
+          },
         ],
       },
     ],
@@ -228,13 +274,13 @@ export const HomeData: Course[] = [
   },
   {
     id: 4,
-    name: "Chương Trình Cũ",
-    description: "Bộ sách Chương Trình Cũ áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
+    name: "Chương Trình Cũ (2006)",
+    description: "Bộ sách Chương Trình Cũ (2006) áp dụng cho các lớp 9 và 12 theo chương trình giáo dục cũ.",
     classes: [
       {
         id: 1,
         name: "Lớp 9",
-        description: "Chương Trình Cũ Lớp 9",
+        description: "Chương Trình Cũ (2006) Lớp 9",
         subjects: [
           {
             name: "Toán Đại Số",
@@ -252,10 +298,29 @@ export const HomeData: Course[] = [
             name: "Hoá",
             playlist_id: "PLCd8j6ZYo0lZCN2kNj8hER6G7qYKk9Jmz",
           },
+        ],
+      },
+      {
+        id: 2,
+        name: "Lớp 12",
+        description: "Chương Trình Cũ (2006) Lớp 12",
+        subjects: [
           {
-            name: "Ngữ Văn",
-            playlist_id: "",
-          }
+            name: "Toán Đại Số",
+            playlist_id: "PLCd8j6ZYo0lbkyF0qIfAJ2vXgnpwj22Ns",
+          },
+          {
+            name: "Toán Hình Học",
+            playlist_id: "PLCd8j6ZYo0lYq4BcqmYsMp8dY42Uo65ML",
+          },
+          {
+            name: "Sinh",
+            playlist_id: "PLCd8j6ZYo0la94H-A372wDs2xXeDhgu5g",
+          },
+          {
+            name: "Hoá",
+            playlist_id: "PLCd8j6ZYo0lZK1gsKE2nz0A9CH_h7PXbE",
+          },
         ],
       },
     ],

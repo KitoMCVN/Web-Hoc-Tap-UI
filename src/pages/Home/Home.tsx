@@ -58,7 +58,7 @@ const Home: React.FC<Props> = ({ courses }) => {
           <p className="text-gray-600 dark:text-slate-300 mb-4">
             {course.description}
           </p>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 xl:grid-cols-3">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 xl:grid-cols-5">
             {course.classes.map((classItem) => (
               <div
                 key={classItem.id}

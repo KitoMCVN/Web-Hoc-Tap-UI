@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex overflow-x-hidden">
         <Sidebar></Sidebar>
         <div className="h-dvh flex-1 overflow-y-scroll">
-          <div className="p-5 max-w-screen-xl mx-auto w-full min-h-full">
+          <div className="p-5 max-w-screen-2xl mx-auto w-full min-h-full">
             {children}
           </div>
         </div>
