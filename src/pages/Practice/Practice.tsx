@@ -6,7 +6,7 @@ const Practice = () => {
       <div className="mt-5 dark:text-slate-200 text-slate-800">
         <h2 className="text-2xl font-bold mb-1">Luyện tập</h2>
         <p className="text-gray-600 dark:text-slate-300 mb-4">
-          Luyện tập kỉ năng văn phòng
+          Luyện tập kỉ năng chuột và phím
         </p>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 xl:grid-cols-5">
           <Link
